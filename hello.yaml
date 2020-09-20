@@ -1,18 +1,21 @@
-  
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: microservicio
+  labels:
+    app: microservice
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: microservice
   template:
     metadata:
       labels:
-        role: hello
+        app: microservice
     spec:
       containers:
-      - name: hello
+      - name: demo
         image: 76591745/service:v1
-        imagePullPolicy: IfNotPresent        
         ports:
         - containerPort: 8080
