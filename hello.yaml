@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservicio
+  name: spring
   labels:
-    app: microservice
+    app: backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: microservice
+      app: backend
   template:
     metadata:
       labels:
-        app: microservice
+        app: backend
     spec:
       containers:
       - name: demo
